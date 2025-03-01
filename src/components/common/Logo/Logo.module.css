@@ -1,0 +1,30 @@
+.brand {
+  display: flex;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -0.0625rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.brand img {
+  width: auto;
+  height: 1.5rem;
+}
+
+@media (width >= 834px) {
+  .brand {
+    margin: 0 auto;
+  }
+
+  .brand img {
+    height: 1.6875rem;
+  }
+}

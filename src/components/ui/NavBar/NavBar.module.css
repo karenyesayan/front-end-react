@@ -1,0 +1,143 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.subMenu {
+  display: none;
+  flex-direction: column;
+  padding: 0 0 0 1rem;
+  transition: flex 400ms ease;
+}
+
+.item {
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+.item:not(:first-child) {
+  border-top: 1px solid #e9e9e9;
+}
+
+.menuToggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 200ms;
+}
+
+.item a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 200ms;
+}
+
+.item:hover > button {
+  color: #eb0028;
+}
+
+.item:hover > a {
+  color: #eb0028;
+}
+
+.item:hover > ul {
+  display: flex;
+}
+
+.item:hover > button svg {
+  transform: rotate(-180deg);
+  stroke: #eb0028;
+}
+
+.item:hover > a svg {
+  stroke: #eb0028;
+}
+
+.menuToggle svg {
+  stroke: black;
+  transition: 400ms;
+}
+
+.item a svg {
+  stroke: black;
+}
+
+@media (width >= 834px) {
+  .menu {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.3375rem 0 0.21875rem 0;
+    z-index: 10;
+    position: relative;
+    width: 97vw;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+  }
+
+  .menu > .item {
+    border: none;
+    line-height: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .subMenu {
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
+    z-index: 10;
+    padding: 0.625rem 1.2rem;
+    top: 3.55rem;
+    animation: fade-in-up 200ms ease-out;
+  }
+
+  .subMenu > .item {
+    padding: 0.5rem 0;
+  }
+
+  .subMenu > .item:not(:last-child) {
+    border-bottom: 1px solid #e9e9e9;
+  }
+
+  .item {
+    line-height: 0.8125rem;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    padding: 1rem 0;
+  }
+
+  .item a {
+    justify-content: space-between;
+    gap: 3.1055rem;
+    transition: all 200ms;
+  }
+
+  .subMenu > .item:hover a {
+    color: #969696;
+    justify-content: flex-end;
+  }
+
+  .item:hover > a svg {
+    stroke: #969696;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0%;
+      transform: translateY(0.25rem);
+    }
+    to {
+      opacity: 100%;
+      transform: translateY(0);
+    }
+  }
+}

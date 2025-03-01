@@ -1,0 +1,36 @@
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -0.0625rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.closeBtn {
+  display: flex;
+}
+
+.closeIcon,
+.barsIcon {
+  fill: black;
+}
+
+@media (width >= 834px) {
+  .toggleBtn {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+  .toggleBtn:hover .closeIcon {
+    fill: #6a7282;
+  }
+
+  .toggleBtn:hover .barsIcon {
+    fill: #6a7282;
+  }
+}

@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding-top: 3rem;
+}
+
+@media (width >= 640px) and (max-width: 1023px) {
+  .list {
+    column-gap: 16px;
+    justify-content: space-between;
+  }
+
+  .list > li {
+    width: calc((100% - 32px) / 2);
+  }
+}
+
+@media (width >= 1024px) {
+  .list {
+    column-gap: 39.985px;
+    row-gap: 48px;
+  }
+
+  .list > li {
+    width: calc((100% - 79.97px) / 3);
+  }
+}

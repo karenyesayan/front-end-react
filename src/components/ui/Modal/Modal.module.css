@@ -1,0 +1,285 @@
+.modal {
+  position: relative;
+  z-index: 10;
+}
+
+.fadeOut {
+  animation: fade-out 250ms forwards;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background-color: #ffffff;
+  transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+}
+
+.backdropFadeIn {
+  opacity: 0.6;
+  animation: backdrop-fade-in 300ms ease-out;
+}
+
+.backdropFadeOut {
+  animation: backdrop-fade-out 200ms ease-in;
+}
+
+.content {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  width: 100vw;
+  overflow-y: auto;
+}
+
+.centeredWrapper {
+  display: flex;
+  min-height: 100%;
+  align-items: stretch;
+  justify-content: center;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  align-items: stretch;
+  justify-content: center;
+  text-align: center;
+}
+
+.body {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+}
+
+.scaleUp {
+  animation: scale-up 300ms ease-out;
+}
+
+.scaleDown {
+  animation: scale-down 200ms ease-in;
+}
+
+.container {
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-start;
+  overflow: hidden;
+  background-color: #fff;
+  padding-inline: 1rem;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
+}
+
+.primaryModalToggle {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  color: #99a1af;
+  z-index: 10;
+}
+
+.modalToggle {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  color: #99a1af;
+  z-index: 10;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.primaryModalToggle svg {
+  fill: black;
+}
+
+.modalToggle svg {
+  fill: black;
+}
+
+@media (width >= 640px) {
+  .container {
+    padding-inline: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .primaryModalToggle {
+    top: 2rem;
+    right: 1.5rem;
+  }
+
+  .modalToggle {
+    top: 2rem;
+    right: 1.5rem;
+  }
+}
+
+@media (width >= 768px) {
+  .backdrop {
+    display: block;
+  }
+
+  .centeredWrapper {
+    align-items: center;
+    padding-inline: 0.5rem;
+  }
+
+  .wrapper {
+    align-items: flex-start;
+    padding-inline: 0.5rem;
+  }
+
+  .body {
+    margin-block: 2rem;
+    max-width: 42rem;
+    padding-inline: 1rem;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+  }
+
+  .scaleUp {
+    animation: scale-up-48 300ms ease-out;
+  }
+
+  .scaleDown {
+    animation: scale-down-48 200ms ease-in;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .primaryModalToggle {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .modalToggle {
+    top: 1.5rem;
+    right: 1.5rem;
+    display: none;
+  }
+
+  @keyframes scale-up-48 {
+    from {
+      transform: translateY(0);
+      transform: scale(0.95);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scale-down-48 {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0.95);
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (width >= 1024px) {
+  .centeredWrapper {
+    padding-inline: 1rem;
+  }
+
+  .wrapper {
+    padding-inline: 1rem;
+  }
+
+  .body {
+    max-width: 56rem;
+  }
+
+  .container {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  .primaryModalToggle {
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+@media (hover: hover) {
+  .primaryModalToggle:hover > svg {
+    fill: #6a7282;
+  }
+
+  .modalToggle:hover > svg {
+    fill: #6a7282;
+  }
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes backdrop-fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 60%;
+  }
+}
+
+@keyframes backdrop-fade-out {
+  from {
+    opacity: 60%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+@keyframes scale-up {
+  from {
+    opacity: 0%;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-down {
+  from {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0%;
+    transform: translateY(1rem);
+  }
+}

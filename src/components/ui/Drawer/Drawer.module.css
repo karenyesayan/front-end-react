@@ -1,0 +1,80 @@
+.drawer {
+  flex-basis: 100%;
+}
+
+.drawerBackdrop {
+  position: fixed;
+  z-index: 10;
+  background: #ffffff;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 500ms;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 0fr;
+  grid-template-rows: 0fr auto;
+  z-index: 10;
+  background: #ffffff;
+  width: 20rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2rem 1.25rem;
+  overflow-y: auto;
+  border-right: 1px solid #e9e9e9;
+  transform: translateX(-22.5rem);
+}
+
+.panel.slideIn {
+  animation: slide-in 600ms;
+}
+
+.panel.open {
+  transform: translateX(0);
+}
+
+.panel.slideOut {
+  animation: slide-out 600ms;
+}
+
+.divider {
+  position: absolute;
+  top: 5.09375rem;
+  left: -1px;
+  width: 20rem;
+  color: #e9e9e9;
+  background-color: #e9e9e9;
+  height: 1px;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-24rem);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-24rem);
+  }
+}
+
+@media (width >= 834px) {
+  .drawer {
+    display: none;
+  }
+}

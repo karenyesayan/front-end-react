@@ -1,0 +1,19 @@
+#root {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 2rem 1.21875rem;
+  box-sizing: content-box;
+  overflow: hidden;
+}
+
+@media (width >= 834px) {
+  #root {
+    padding: 1.8125rem 1.21875rem;
+  }
+}
+
+@media (width >= 1024px) {
+  #root {
+    overflow: visible;
+  }
+}

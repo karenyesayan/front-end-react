@@ -1,0 +1,25 @@
+.list {
+  width: 100%;
+}
+
+.item {
+  border-radius: 0.25rem;
+  display: flex;
+  padding: 1rem 0;
+  position: relative;
+  line-height: 1rem;
+}
+
+.item:not(:last-of-type) {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.item:hover {
+  color: #eb0028;
+}
+
+@media (width >= 768px) {
+  .item {
+    line-height: 1.5rem;
+  }
+}

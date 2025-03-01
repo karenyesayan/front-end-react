@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.wrapper {
+  overflow: auto;
+  flex-wrap: wrap;
+  min-height: auto;
+  width: 100%;
+  margin-top: 3.5rem;
+}
+
+.container {
+  display: none;
+}
+
+@media (width >= 834px) {
+  .header {
+    padding-bottom: 1.625rem;
+  }
+
+  .container {
+    display: block;
+    position: sticky;
+    top: -3.65625rem;
+    background-color: #ffffff;
+    z-index: 10;
+    transition: top 700ms;
+  }
+
+  .fadeInUp {
+    top: -1px;
+  }
+}
